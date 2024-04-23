@@ -23,13 +23,13 @@
                             <option value="negatif">Negatif</option>
                         </x-splade-select>
                         <x-splade-input class="mb-4" id="tanggapan_p" name="tanggapan_p" label="tanggapan pelayanan" required />
-                        <x-splade-select class="mb-4" name="kategori_p" label="Kategori makanan" required>
+                        <x-splade-select class="mb-4" name="kategori_p" label="Kategori pelayanan" required>
                             <option value="positif">Positif</option>
                             <option value="netral">Netral</option>
                             <option value="negatif">Negatif</option>
                         </x-splade-select>
-                        <x-splade-input class="mb-4" id="tanggapan_s" name="tanggapan_s" label="tanggapan suasanan" required />
-                        <x-splade-select class="mb-4" name="kategori_s" label="Kategori makanan" required>
+                        <x-splade-input class="mb-4" id="tanggapan_s" name="tanggapan_s" label="tanggapan suasana" required />
+                        <x-splade-select class="mb-4" name="kategori_s" label="Kategori suasana" required>
                             <option value="positif">Positif</option>
                             <option value="netral">Netral</option>
                             <option value="negatif">Negatif</option>
