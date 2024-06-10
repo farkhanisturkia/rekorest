@@ -63,7 +63,7 @@ Route::middleware('splade')->group(function () {
         Route::get('/testing', [TestingController::class, 'index'])->name('testing.index');
         Route::get('/testing/create', [TestingController::class, 'create'])->name('testing.create');
         Route::post('/testing/create', [TestingController::class, 'store'])->name('testing.store');
-        Route::put('/testing/{testing}', [TestingController::class, 'update'])->name('testing.update');
+        Route::put('/testing/{testing}', [TestingController::class, 'destroy'])->name('testing.destroy');
 
         Route::get('/hasil', [HasilController::class, 'index'])->name('hasil.index');
         Route::get('/rekom', [RekomController::class, 'index'])->name('rekom.index');

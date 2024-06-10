@@ -9,7 +9,49 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    Rekomendasi
+                    <p class="text-center font-bold fs-3 mt-2 mb-3">TOP 2</p>
+                    <div class="container d-flex justify-content-around">
+                        @foreach ($rekomendasi as $datas => $data)
+                            <div class="card" style="width: 30rem;">
+                                <div class="card-body">
+                                    <p class="card-text text-center font-medium fs-5 mb-2">{{ $datas }}</p>
+                                    <p class="card-text text-center">{{ $data['alamat'] }}</p>
+                                    <div class="container d-flex justify-content-around mb-3">
+                                        <p class="card-text mb-2">JTU : {{ $data['jtu'] }}KM</p>
+                                        <p class="card-text mb-2">JHP : {{ $data['jhp'] }}KM</p>
+                                        <p class="card-text mb-2">JPK : {{ $data['jpk'] }}KM</p>
+                                    </div>
+                                    <div class="container d-flex justify-content-around align-items-center mb-3">
+                                        <div>
+                                            <p class="card-text">Makanan : {{ $data['score_m'] }} ({{ $data['kategori_m'] }})</p>
+                                            <p class="card-text">Suasana : {{ $data['score_s'] }} ({{ $data['kategori_s'] }})</p>
+                                            <p class="card-text">Pelayanan : {{ $data['score_p'] }} ({{ $data['kategori_p'] }})</p>
+                                        </div>
+                                        <p class="card-text font-medium">Total score : {{ $data['score'] }}</p>
+                                    </div>
+                                </div>
+                            </div>
+                            @if ($loop->iteration >= 2)
+                                @break
+                            @endif
+                        @endforeach
+                    </div>
+                    <p class="text-center font-bold fs-4 mt-5 mb-3">ALL RECOMENDATION</p>
+                    <div class="container d-flex justify-content-center flex-wrap gap-4">
+                        @foreach ($rekomendasi as $datas => $data)
+                            @if ($loop->iteration > 2)
+                                <div class="card" style="width: 20rem;">
+                                    <div class="card-body">
+                                    <p class="card-text text-center font-medium fs-5 mb-2">{{ $datas }}</p>
+                                    <p class="card-text">Score makanan : {{ $data['score_m'] }} ({{ $data['kategori_m'] }})</p>
+                                    <p class="card-text">Score suasana : {{ $data['score_s'] }} ({{ $data['kategori_s'] }})</p>
+                                    <p class="card-text">Score pelayanan : {{ $data['score_p'] }} ({{ $data['kategori_p'] }})</p>
+                                    <p class="card-text font-medium mt-2">Total score : {{ $data['score'] }}</p>
+                                    </div>
+                                </div>
+                            @endif
+                        @endforeach
+                    </div>
                 </div>
             </div>
         </div>

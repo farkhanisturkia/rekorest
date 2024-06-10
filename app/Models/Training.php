@@ -13,6 +13,8 @@ class Training extends Model
     protected $fillable = [
         'profil_id',
         'is_testing',
+        'is_dataset',
+        'is_recomended',
         'resto_name',
         'tanggapan_m',
         'tanggapan_p',
@@ -20,6 +22,10 @@ class Training extends Model
         'kategori_m',
         'kategori_p',
         'kategori_s',
+        'alamat',
+        'jtu',
+        'jhp',
+        'jpk',
     ];
 
     public function profil(){

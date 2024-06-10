@@ -34,6 +34,10 @@
                             <option value="netral">Netral</option>
                             <option value="negatif">Negatif</option>
                         </x-splade-select>
+                        <x-splade-input class="mb-4" id="alamat" name="alamat" label="alamat" required />
+                        <x-splade-input class="mb-4" id="jtu" name="jtu" label="jarak dari transportasi umum (KM)" required />
+                        <x-splade-input class="mb-4" id="jhp" name="jhp" label="jarak dari hotel/penginapan (KM)" required />
+                        <x-splade-input class="mb-4" id="jpk" name="jpk" label="jarak dari pusat kota (KM)" required />
                         <x-splade-submit label="Tambahkan" />
                     </x-splade-form>
                 </div>

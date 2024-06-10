@@ -13,7 +13,7 @@
                     <x-splade-table class="mt-4" :for="$trainings"  pagination-scroll="preserve">
                         <x-splade-cell actions as="$trainings">
                             <x-splade-form 
-                                action="{{ route('testing.update', $trainings) }}"
+                                action="{{ route('testing.destroy', $trainings) }}"
                                 method="put"
                                 confirm="Hapus Data"
                                 confirm-text="Apa Kamu Yakin Untuk Menghapus Data?"

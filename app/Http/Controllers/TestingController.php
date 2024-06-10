@@ -17,7 +17,7 @@ class TestingController extends Controller
 
     public function create() {
         return view('testing.create', [
-            'trainings' => Training::where('is_testing', false)->get()
+            'trainings' => Training::where('is_testing', false)->where('is_dataset', false)->get()
         ]);
     }
 
@@ -34,8 +34,8 @@ class TestingController extends Controller
         return to_route('testing.index');
     }
 
-    public function update($id) {
-        // dd($request->all());
+    public function destroy($id) {
+
         $training = Training::find($id);
         
         $training->update([
