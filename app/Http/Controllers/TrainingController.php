@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Profil;
 use App\Models\Training;
 use Illuminate\Http\Request;
+use App\Tables\TrainingTable;
 use Phpml\Classification\NaiveBayes;
 use ProtoneMedia\Splade\SpladeTable;
 use ProtoneMedia\Splade\Facades\Toast;
@@ -14,23 +15,7 @@ class TrainingController extends Controller
 {
     public function index() {
         return view('training.index', [
-            'trainings' => SpladeTable::for(Training::class)
-                ->column('id', sortable: true)
-                ->column('pengulas')
-                ->column('resto_name', sortable: true)
-                ->column('tanggapan_m', label:'Tanggapan Makanan')
-                ->column('kategori_m', label:'Kategori Makanan')
-                ->column('tanggapan_p', label:'Tanggapan Pelayanan')
-                ->column('kategori_p', label:'Kategori Pelayanan')
-                ->column('tanggapan_s', label:'Tanggapan Suasana')
-                ->column('kategori_s', label:'Kategori Suasana')
-                ->column('alamat', label:'Alamat')
-                ->column('jtu', label:'JTU')
-                ->column('jhp', label:'JHP')
-                ->column('jpk', label:'JPK')
-                ->column('actions')
-                ->defaultSort('id', 'desc')
-                ->paginate(15),
+            'trainings' => TrainingTable::class
         ]);
     }
 
