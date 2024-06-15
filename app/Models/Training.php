@@ -11,7 +11,7 @@ class Training extends Model
     use HasFactory;
 
     protected $fillable = [
-        'profil_id',
+        'pengulas',
         'is_testing',
         'is_dataset',
         'is_recomended',
@@ -26,9 +26,6 @@ class Training extends Model
         'jtu',
         'jhp',
         'jpk',
+        'path'
     ];
-
-    public function profil(){
-        return $this->belongsTo(Profil::class, 'profil_id');
-    }
 }

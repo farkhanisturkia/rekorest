@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('trainings', function (Blueprint $table) {
             $table->id();
-            $table->integer('profil_id')->nullable();
+            $table->string('pengulas')->nullable();
             $table->boolean('is_testing')->default(false)->nullable();
             $table->boolean('is_dataset')->default(false)->nullable();
             $table->boolean('is_recomended');
@@ -28,6 +28,7 @@ return new class extends Migration
             $table->float('jtu')->nullable();
             $table->float('jhp')->nullable();
             $table->float('jpk')->nullable();
+            $table->string('path')->default(null)->nullable();
             $table->timestamps();
         });
     }

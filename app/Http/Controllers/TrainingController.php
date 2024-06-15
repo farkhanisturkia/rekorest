@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\Models\Profil;
 use App\Models\Training;
 use Illuminate\Http\Request;
-use ProtoneMedia\Splade\SpladeTable;
 use Phpml\Classification\NaiveBayes;
+use ProtoneMedia\Splade\SpladeTable;
 use ProtoneMedia\Splade\Facades\Toast;
+use Illuminate\Support\Facades\Storage;
 
 class TrainingController extends Controller
 {
@@ -15,7 +16,7 @@ class TrainingController extends Controller
         return view('training.index', [
             'trainings' => SpladeTable::for(Training::class)
                 ->column('id', sortable: true)
-                ->column('profil.name')
+                ->column('pengulas')
                 ->column('resto_name', sortable: true)
                 ->column('tanggapan_m', label:'Tanggapan Makanan')
                 ->column('kategori_m', label:'Kategori Makanan')
@@ -34,12 +35,7 @@ class TrainingController extends Controller
     }
 
     public function create() {
-
-        $profil = Profil::get();
-
-        return view('training.create', [
-            'profils' => $profil
-        ]);
+        return view('training.create');
     }
 
     public function store(Request $request) {
@@ -132,8 +128,17 @@ class TrainingController extends Controller
 
         $predictions = $classifier->predict([$score_m, $score_p, $score_s]);
 
+        $request->validate([
+            'path'     => 'required|image|mimes:jpeg,jpg,png'
+        ]);
+
+        $image              = $request->file('path');
+        $image_name         = $image->hashName();
+
+        Storage::put("public/images", $image);
+
         Training::create([
-            'profil_id'    => $request->profil_id,
+            'pengulas'    => $request->pengulas,
             'is_recomended'=> $predictions,
             'resto_name'   => $request->resto_name,
             'tanggapan_m'  => $request->tanggapan_m,
@@ -145,7 +150,8 @@ class TrainingController extends Controller
             'alamat'       => $request->alamat,
             'jtu'          => $request->jtu,
             'jhp'          => $request->jhp,
-            'jpk'          => $request->jpk
+            'jpk'          => $request->jpk,
+            'path'          => "Storage/images/$image_name",
         ]);
 
         Toast::title('Data Profil Telah Dibuat')->autoDismiss(3);
@@ -154,12 +160,8 @@ class TrainingController extends Controller
     }
 
     public function edit(Training $training) {
-
-        $profil = Profil::get();
-
         return view('training.edit', [
-            'training'   => $training,
-            'profils' => $profil
+            'training'   => $training
         ]);
     }
 
@@ -254,7 +256,7 @@ class TrainingController extends Controller
         $predictions = $classifier->predict([$score_m, $score_p, $score_s]);
 
         $training->update([
-            'profil_id'    => $request->profil_id,
+            'pengulas'     => $request->pengulas,
             'is_recomended'=> $predictions,
             'resto_name'   => $request->resto_name,
             'tanggapan_m'  => $request->tanggapan_m,

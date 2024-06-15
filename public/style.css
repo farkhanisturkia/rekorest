@@ -1,0 +1,38 @@
+.positif {
+    background-color: green;
+    color: white;
+}
+.positif:hover {
+    background-color: rgb(87, 255, 87);
+    color: black;
+}
+.netral:hover {
+    background-color: yellow;
+    color: black;
+}
+.netral {
+    background-color: rgb(200, 200, 29);
+    color: white;
+}
+.negatif {
+    background-color: red;
+    color: white;
+}
+.negatif:hover {
+    background-color: rgb(255, 135, 135);
+    color: black;
+}
+.header {
+    background-size: cover;
+    background-position: center;
+    height: 400px; /* Adjust height as needed */
+    color: white;
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 1);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.header h1 {
+    font-size: 5rem;
+} 

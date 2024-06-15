@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Training;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HasilController;
 use App\Http\Controllers\RekomController;
@@ -38,7 +39,12 @@ Route::middleware('splade')->group(function () {
 
     Route::middleware('auth')->group(function () {
         Route::get('/dashboard', function () {
-            return view('dashboard');
+
+            $training = Training::where('is_dataset', false)->get();
+            
+            return view('dashboard', [
+                'training' => $training,
+            ]);
         })->middleware(['verified'])->name('dashboard');
 
         Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
@@ -48,9 +54,9 @@ Route::middleware('splade')->group(function () {
         Route::get('/profil', [ProfilController::class, 'index'])->name('profil.index');
         Route::get('/profil/create', [ProfilController::class, 'create'])->name('profil.create');
         Route::post('/profil/create', [ProfilController::class, 'store'])->name('profil.store');
-        Route::get('/profil/edit/{profil}', [ProfilController::class, 'edit'])->name('profil.edit');
-        Route::put('/profil/edit/{profil}', [ProfilController::class, 'update'])->name('profil.update');
-        Route::delete('/profil/{profil}', [ProfilController::class, 'destroy'])->name('profil.destroy');
+        Route::get('/profil/edit/{user}', [ProfilController::class, 'edit'])->name('profil.edit');
+        Route::put('/profil/edit/{user}', [ProfilController::class, 'update'])->name('profil.update');
+        Route::delete('/profil/{user}', [ProfilController::class, 'destroy'])->name('profil.destroy');
 
 
         Route::get('/training', [TrainingController::class, 'index'])->name('training.index');
@@ -67,6 +73,7 @@ Route::middleware('splade')->group(function () {
 
         Route::get('/hasil', [HasilController::class, 'index'])->name('hasil.index');
         Route::get('/rekom', [RekomController::class, 'index'])->name('rekom.index');
+        Route::get('/rekom/detail/{id}', [RekomController::class, 'detail'])->name('rekom.detail');
     });
 
     require __DIR__.'/auth.php';

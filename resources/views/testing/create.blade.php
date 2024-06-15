@@ -12,7 +12,7 @@
                     <x-splade-form action="{{ route('testing.store') }}">
                         <x-splade-select class="mb-4" name="training_id" label="Data Training" required>
                             @foreach ($trainings as $training)
-                                <option value="{{ $training->id }}">ID: {{ $training->id }}. {{ $training->resto_name }} by {{ $training->profil->name }}</option>
+                                <option value="{{ $training->id }}">ID: {{ $training->id }}. {{ $training->resto_name }} by {{ $training->pengulas }}</option>
                             @endforeach
                         </x-splade-select>
                         <x-splade-submit label="Tambahkan" />

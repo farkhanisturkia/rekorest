@@ -3,8 +3,6 @@
 namespace Database\Seeders;
 
 use App\Models\User;
-// use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use App\Models\Profil;
 use App\Models\Training;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
@@ -34,23 +32,32 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('password'),
         ]);
 
-        Profil::create([
+        User::create([
+            'role' => 'admin',
             'name' => 'Astri',
-            'username' => 'Axxxi'
+            'username' => 'Astri',
+            'email' => 'testAstri@example.com',
+            'password' => Hash::make('password'),
         ]);
 
-        Profil::create([
+        User::create([
+            'role' => 'admin',
             'name' => 'Putri',
-            'username' => 'Pxxxi'
+            'username' => 'Putri',
+            'email' => 'testPutri@example.com',
+            'password' => Hash::make('password'),
         ]);
 
-        Profil::create([
+        User::create([
+            'role' => 'admin',
             'name' => 'Evony',
-            'username' => 'Exxxy'
+            'username' => 'Evony',
+            'email' => 'testEvony@example.com',
+            'password' => Hash::make('password'),
         ]);
 
         Training::create([
-            'profil_id' => 1,
+            'pengulas' => "mang aji",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => true,
@@ -64,7 +71,7 @@ class DatabaseSeeder extends Seeder
         ]);
         
         Training::create([
-            'profil_id' => 2,
+            'pengulas' => "ko lim",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => true,
@@ -78,7 +85,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 3,
+            'pengulas' => "cak dola",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => true,
@@ -92,7 +99,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 1,
+            'pengulas' => "mang aji",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => true,
@@ -106,7 +113,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 2,
+            'pengulas' => "ko lim",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => true,
@@ -120,7 +127,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 3,
+            'pengulas' => "cak dola",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -134,7 +141,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 1,
+            'pengulas' => "mang aji",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => true,
@@ -148,7 +155,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 2,
+            'pengulas' => "ko lim",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -162,7 +169,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 3,
+            'pengulas' => "cak dola",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -176,7 +183,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 1,
+            'pengulas' => "mang aji",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => true,
@@ -190,7 +197,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 2,
+            'pengulas' => "ko lim",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => true,
@@ -204,7 +211,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 3,
+            'pengulas' => "cak dola",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -218,7 +225,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 1,
+            'pengulas' => "mang aji",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => true,
@@ -232,7 +239,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 2,
+            'pengulas' => "ko lim",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -246,7 +253,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 3,
+            'pengulas' => "cak dola",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -260,7 +267,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 1,
+            'pengulas' => "mang aji",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -274,7 +281,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 2,
+            'pengulas' => "ko lim",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -288,7 +295,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 3,
+            'pengulas' => "cak dola",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -302,7 +309,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 1,
+            'pengulas' => "mang aji",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => true,
@@ -316,7 +323,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 2,
+            'pengulas' => "ko lim",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -330,7 +337,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 3,
+            'pengulas' => "cak dola",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -344,7 +351,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 1,
+            'pengulas' => "mang aji",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -358,7 +365,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 2,
+            'pengulas' => "ko lim",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -372,7 +379,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 3,
+            'pengulas' => "cak dola",
             'is_testing' => false,
             'is_dataset' => true,
             'is_dataset' => true,
@@ -387,7 +394,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 1,
+            'pengulas' => "mang aji",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -401,7 +408,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 2,
+            'pengulas' => "ko lim",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -415,7 +422,7 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Training::create([
-            'profil_id' => 3,
+            'pengulas' => "cak dola",
             'is_testing' => false,
             'is_dataset' => true,
             'is_recomended' => false,
@@ -426,114 +433,6 @@ class DatabaseSeeder extends Seeder
             'kategori_m' => 'negatif',
             'kategori_p' => 'negatif',
             'kategori_s' => 'negatif'
-        ]);
-
-        Training::create([
-            'profil_id' => 1,
-            'is_testing' => true,
-            'is_dataset' => false,
-            'is_recomended' => true,
-            'resto_name' => 'Nua Indah Coffe dan Resto',
-            'tanggapan_m' => 'makanan enak',
-            'tanggapan_p' => 'pelayan cukup memuaskan',
-            'tanggapan_s' => 'tempatnya bagus',
-            'kategori_m' => 'positif',
-            'kategori_p' => 'netral',
-            'kategori_s' => 'positif',
-            'alamat'   => 'Jalan ahmad nasution no.5, wandoka utara, kabupaten wakatobi, sulawesi tenggara, 93791',
-            'jtu'   => 18.4,
-            'jhp'   => 7.2,
-            'jpk'   => 0.006
-        ]);
-
-        Training::create([
-            'profil_id' => 2,
-            'is_testing' => true,
-            'is_dataset' => false,
-            'is_recomended' => true,
-            'resto_name' => 'Restaurant Wisata',
-            'tanggapan_m' => 'makanan enak',
-            'tanggapan_p' => 'pelayan luar biasa',
-            'tanggapan_s' => 'tempatnya cantik',
-            'kategori_m' => 'positif',
-            'kategori_p' => 'positif',
-            'kategori_s' => 'positif',
-            'alamat'   => 'Pulau wangiwangi, sulawesi tenggara, kabupaten wakatobi, sulawesi tenggara, 93795',
-            'jtu'   => 18.3,
-            'jhp'   => 0.16,
-            'jpk'   => 0.45
-        ]);
-
-        Training::create([
-            'profil_id' => 3,
-            'is_testing' => true,
-            'is_dataset' => false,
-            'is_recomended' => true,
-            'resto_name' => 'Ampupu Beach Resort',
-            'tanggapan_m' => 'makanan enak',
-            'tanggapan_p' => 'pelayan memuaskan',
-            'tanggapan_s' => 'tempatnya jelek',
-            'kategori_m' => 'positif',
-            'kategori_p' => 'positif',
-            'kategori_s' => 'negatif',
-            'alamat'   => 'Jalan sultan hasanudin, Kec.wangi-wangi, Kab.Wakatobi, Sulawesi tenggara, 93791',
-            'jtu'   => 20.6,
-            'jhp'   => 0.05,
-            'jpk'   => 3.1
-        ]);
-
-        Training::create([
-            'profil_id' => 1,
-            'is_testing' => true,
-            'is_dataset' => false,
-            'is_recomended' => true,
-            'resto_name' => 'RM Reza Paseba',
-            'tanggapan_m' => 'makanan biasa',
-            'tanggapan_p' => 'pelayan cukup memuaskan',
-            'tanggapan_s' => 'tempatnya bagus',
-            'kategori_m' => 'netral',
-            'kategori_p' => 'netral',
-            'kategori_s' => 'positif',
-            'alamat'   => 'Ambeua, Kec.Kaledupa, Kab.Wakatobi, Sulawesi Tenggara 93792',
-            'jtu'   => 0.4,
-            'jhp'   => 0.28,
-            'jpk'   => 0.5
-        ]);
-
-        Training::create([
-            'profil_id' => 2,
-            'is_testing' => true,
-            'is_dataset' => false,
-            'is_recomended' => true,
-            'resto_name' => 'Laroka Hotel & resto',
-            'tanggapan_m' => 'makanan basi',
-            'tanggapan_p' => 'pelayan luar biasa',
-            'tanggapan_s' => 'tempatnya cantik',
-            'kategori_m' => 'negatif',
-            'kategori_p' => 'positif',
-            'kategori_s' => 'positif',
-            'alamat'   => 'Waiti, Tomia, Kab.Wakatobi, Sulawesi Tenggara',
-            'jtu'   => 2.9,
-            'jhp'   => 0,
-            'jpk'   => 4.6
-        ]);
-
-        Training::create([
-            'profil_id' => 3,
-            'is_testing' => true,
-            'is_dataset' => false,
-            'is_recomended' => true,
-            'resto_name' => 'Rumah Makan Pasundan Binongko Wakatobi',
-            'tanggapan_m' => 'makanan enak',
-            'tanggapan_p' => 'pelayan memuaskan',
-            'tanggapan_s' => 'tempatnya bagus',
-            'kategori_m' => 'positif',
-            'kategori_p' => 'positif',
-            'kategori_s' => 'positif',
-            'alamat'   => 'Kampo-kampo, Binongko, Kab.Wakatobi, Sulawesi Tenggara, 93794',
-            'jtu'   => 3.6,
-            'jhp'   => 0.13,
-            'jpk'   => 0.75
         ]);
     }
 }

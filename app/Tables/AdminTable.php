@@ -2,12 +2,13 @@
 
 namespace App\Tables;
 
-use App\Models\Training;
+use App\Models\User;
 use Illuminate\Http\Request;
-use ProtoneMedia\Splade\AbstractTable;
+use Illuminate\Support\Facades\Auth;
 use ProtoneMedia\Splade\SpladeTable;
+use ProtoneMedia\Splade\AbstractTable;
 
-class TestingTable extends AbstractTable
+class AdminTable extends AbstractTable
 {
     /**
      * Create a new instance.
@@ -36,7 +37,7 @@ class TestingTable extends AbstractTable
      */
     public function for()
     {
-        return Training::query()->where('is_testing', true);
+        return User::query()->where('role', 'admin')->where('username', '!=', Auth::user()->username);
     }
 
     /**
@@ -48,12 +49,10 @@ class TestingTable extends AbstractTable
     public function configure(SpladeTable $table)
     {
         $table
-            ->column('id')
-            ->column('pengulas')
-            ->column('resto_name')
-            ->column('tanggapan_m', label:'Tanggapan Makanan')
-            ->column('tanggapan_p', label:'Tanggapan Pelayanan')
-            ->column('tanggapan_s', label:'Tanggapan Suasana')
+            ->column('name')
+            ->column('username')
+            ->column('email')
+            ->column('role')
             ->column('actions')
             ->paginate(15);
     }

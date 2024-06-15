@@ -55,9 +55,7 @@ class RekomController extends Controller
 
             $recommendations[$data->resto_name] = [
                 'score'     =>$prediction,
-                'score_m'   =>$score_m,
-                'score_p'   =>$score_p,
-                'score_s'   =>$score_s,
+                'id'        =>$data->id,
                 'kategori_m'=>$data->kategori_m,
                 'kategori_p'=>$data->kategori_p,
                 'kategori_s'=>$data->kategori_s,
@@ -73,6 +71,15 @@ class RekomController extends Controller
 
         return view('rekom.index',[
             'rekomendasi'   => $topRecommendations
+        ]);
+    }
+
+    public function detail($id) {
+
+        $training = Training::where('id', $id)->get();
+
+        return view('rekom.detail', [
+            'training' => $training,
         ]);
     }
 }
