@@ -240,6 +240,15 @@ class TrainingController extends Controller
 
         $predictions = $classifier->predict([$score_m, $score_p, $score_s]);
 
+        $request->validate([
+            'path'     => 'required|image|mimes:jpeg,jpg,png'
+        ]);
+
+        $image              = $request->file('path');
+        $image_name         = $image->hashName();
+
+        Storage::put("public/images", $image);
+
         $training->update([
             'pengulas'     => $request->pengulas,
             'is_recomended'=> $predictions,
@@ -253,7 +262,8 @@ class TrainingController extends Controller
             'alamat'       => $request->alamat,
             'jtu'          => $request->jtu,
             'jhp'          => $request->jhp,
-            'jpk'          => $request->jpk
+            'jpk'          => $request->jpk,
+            'path'          => "Storage/images/$image_name",
         ]);
 
         Toast::title('Data Telah Diubah')->warning()->autoDismiss(3);
