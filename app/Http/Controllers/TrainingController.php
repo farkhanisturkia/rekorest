@@ -244,6 +244,10 @@ class TrainingController extends Controller
             'path'     => 'required|image|mimes:jpeg,jpg,png'
         ]);
 
+        $filter = "Storage/images/";
+        $result = str_replace($filter, "", $training->path);
+        Storage::delete("public/images/" . $result);
+
         $image              = $request->file('path');
         $image_name         = $image->hashName();
 
@@ -272,6 +276,10 @@ class TrainingController extends Controller
     }
 
     public function destroy(Training $training) {
+        $filter = "Storage/images/";
+        $result = str_replace($filter, "", $training->path);
+        Storage::delete("public/images/" . $result);
+        
         $training->delete();
 
         Toast::title('Data Training Telah Dihapus')->danger()->autoDismiss(3);
