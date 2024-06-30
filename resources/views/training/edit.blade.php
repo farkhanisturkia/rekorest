@@ -11,7 +11,14 @@
                 <div class="p-6 bg-white border-b border-gray-200">
                     <x-splade-form action="{{ route('training.update', $training) }}" :default="$training" method="put">
                         <x-splade-input class="mb-4" id="pengulas" name="pengulas" label="Nama Pengulas" required />
-                        <x-splade-input class="mb-4" id="resto_name" name="resto_name" label="Nama Restaurant" required />
+                        <x-splade-select class="mb-4" name="resto_name" label="Nama Restaurant" required>
+                            <option value="Nua Indah Coffee & Resto">Nua Indah Coffee & Resto</option>
+                            <option value="Restaurant Wisata">Restaurant Wisata</option>
+                            <option value="Ampupu Beach Resort">Ampupu Beach Resort</option>
+                            <option value="RM Reza Pasera">RM Reza Pasera</option>
+                            <option value="Laroka Hotel & Resto">Laroka Hotel & Resto</option>
+                            <option value="RM Pasundan Binongko Wakatobi">RM Pasundan Binongko Wakatobi</option>
+                        </x-splade-select>
                         <x-splade-input class="mb-4" id="tanggapan_m" name="tanggapan_m" label="tanggapan makanan" required />
                         <x-splade-select class="mb-4" name="kategori_m" label="Kategori makanan" required>
                             <option value="positif">Positif</option>
