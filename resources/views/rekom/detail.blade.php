@@ -56,9 +56,9 @@
                                         <td style="border: 1px solid black; padding: 8px; text-align: left;">{{ $training->tanggapan_s }}</td>
                                         <th style="border: 1px solid black; padding: 8px; text-align: left; background-color: #d6d6d6; position: sticky; left: 0; z-index: 1;">Penilaian</th>
                                         <td style="border: 1px solid black; padding: 8px; text-align: left;">
-                                            <p class="card-text px-3 py-1 rounded-md {{ $training->kategori_m}}">{{ $training->kategori_m }}</p>
-                                            <p class="card-text px-3 py-1 my-1 rounded-md {{ $training->kategori_s}}">{{ $training->kategori_s }}</p>
-                                            <p class="card-text px-3 py-1 rounded-md {{ $training->kategori_p}}">{{ $training->kategori_p }}</p>
+                                            <p class="card-text px-3 py-1 rounded-md {{ $training->kategori_m}}">Makanan {{ $training->kategori_m }}</p>
+                                            <p class="card-text px-3 py-1 my-1 rounded-md {{ $training->kategori_s}}">Suasana {{ $training->kategori_s }}</p>
+                                            <p class="card-text px-3 py-1 rounded-md {{ $training->kategori_p}}">Pelayanan {{ $training->kategori_p }}</p>
                                         </td>
                                     </tr>
                                 </tbody>

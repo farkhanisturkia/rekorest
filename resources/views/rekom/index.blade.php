@@ -22,10 +22,10 @@
                                             <p class="card-text mb-2">JHP : {{ $data['jhp'] }}KM</p>
                                             <p class="card-text mb-2">JPK : {{ $data['jpk'] }}KM</p>
                                         </div>
-                                        <div class="container d-flex justify-content-around align-items-center mb-3">
-                                            <p class="card-text px-3 py-1 rounded-md {{ $data['kategori_m']}}">{{ $data['kategori_m'] }}</p>
-                                            <p class="card-text px-3 py-1 rounded-md {{ $data['kategori_s']}}">{{ $data['kategori_s'] }}</p>
-                                            <p class="card-text px-3 py-1 rounded-md {{ $data['kategori_p']}}">{{ $data['kategori_p'] }}</p>
+                                        <div class="container d-flex justify-content-around gap-2 align-items-center mb-3">
+                                            <p class="card-text px-3 py-1 rounded-md text-center {{ $data['kategori_m']}}">Makanan {{ $data['kategori_m'] }}</p>
+                                            <p class="card-text px-3 py-1 rounded-md text-center {{ $data['kategori_s']}}">Suasana {{ $data['kategori_s'] }}</p>
+                                            <p class="card-text px-3 py-1 rounded-md text-center {{ $data['kategori_p']}}">Pelayanan {{ $data['kategori_p'] }}</p>
                                         </div>
                                     </div>
                                 </div>
@@ -43,10 +43,10 @@
                                     <div class="card" style="width: 20rem;">
                                         <div class="card-body">
                                         <p class="card-text text-center font-medium fs-5 mb-2">{{ $datas }}</p>
-                                            <div class="container d-flex justify-content-around align-items-center mb-3">
-                                                <p class="card-text px-3 py-1 rounded-md {{ $data['kategori_m']}}">{{ $data['kategori_m'] }}</p>
-                                                <p class="card-text px-3 py-1 rounded-md {{ $data['kategori_s']}}">{{ $data['kategori_s'] }}</p>
-                                                <p class="card-text px-3 py-1 rounded-md {{ $data['kategori_p']}}">{{ $data['kategori_p'] }}</p>
+                                            <div class="container d-flex justify-content-around gap-1 align-items-center mb-3">
+                                                <p class="card-text px-3 py-1 rounded-md text-center {{ $data['kategori_m']}}">Makanan {{ $data['kategori_m'] }}</p>
+                                                <p class="card-text px-3 py-1 rounded-md text-center {{ $data['kategori_s']}}">Suasana {{ $data['kategori_s'] }}</p>
+                                                <p class="card-text px-3 py-1 rounded-md text-center {{ $data['kategori_p']}}">Pelayanan {{ $data['kategori_p'] }}</p>
                                             </div>
                                         </div>
                                     </div>
