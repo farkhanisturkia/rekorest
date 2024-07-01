@@ -1,5 +1,11 @@
 <x-guest-layout>
     <x-auth-card>
+
+        {{-- Isset Logo --}}
+        <x-slot name="logo">
+            <img style="width: 70px;" src="{{ asset('logo.png') }}" alt="logo">
+        </x-slot>
+
         <x-splade-form action="{{ route('register') }}" class="space-y-4">
             <x-splade-input id="name" type="text" name="name" :label="__('Name')" required autofocus />
             <x-splade-input id="username" type="text" name="username" :label="__('Username')" required />

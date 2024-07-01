@@ -3,6 +3,11 @@
         <!-- Session Status -->
         <x-auth-session-status class="mb-4" />
 
+        {{-- Isset Logo --}}
+        <x-slot name="logo">
+            <img style="width: 100px;" src="{{ asset('logo.png') }}" alt="logo">
+        </x-slot>
+
         <x-splade-form action="{{ route('login') }}" class="space-y-4">
             <!-- Email Address -->
             <x-splade-input id="username" type="text" name="username" :label="__('Username')" required autofocus />
