@@ -72,6 +72,7 @@ Route::middleware('splade')->group(function () {
         Route::put('/testing/{testing}', [TestingController::class, 'destroy'])->name('testing.destroy');
 
         Route::get('/hasil', [HasilController::class, 'index'])->name('hasil.index');
+        Route::get('/hasil/detail/{id}', [HasilController::class, 'detail'])->name('hasil.detail');
         Route::get('/rekom', [RekomController::class, 'index'])->name('rekom.index');
         Route::get('/rekom/detail/{id}', [RekomController::class, 'detail'])->name('rekom.detail');
     });
