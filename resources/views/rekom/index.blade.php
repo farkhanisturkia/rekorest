@@ -35,7 +35,7 @@
                             </a>
                         @endforeach
                     </div>
-                    <p class="text-center font-bold fs-4 mt-5 mb-3">ALL RECOMENDATION</p>
+                    <p class="text-center font-bold fs-4 mt-5 mb-3">OTHER RECOMENDATION</p>
                     <div class="container d-flex justify-content-center flex-wrap gap-4">
                         @foreach ($rekomendasi as $datas => $data)
                             <a href="{{route('rekom.detail', ['id' => $data['id']])}}">

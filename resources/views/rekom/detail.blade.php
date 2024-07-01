@@ -16,7 +16,7 @@
                                 <p>{{ $training->alamat }}</p>
                             </div>
                         </header>
-                        <div class=" mt-5 d-flex justify-between flex-wrap gap-5">
+                        <div class="mt-5 d-flex justify-between flex-wrap gap-5">
                             <table style="border-collapse: collapse; width: 100%;">
                                 <thead>
                                     <tr class="header-row">
@@ -63,6 +63,9 @@
                                     </tr>
                                 </tbody>
                             </table>
+                        </div>
+                        <div class="mt-5 d-flex justify-center">
+                            <Link href="{{ route('hasil.detail', ['id' => $training]) }}" class="me-2 px-3 py-2 bg-blue-500 rounded text-white hover:bg-blue-300 hover:text-black font-semibold"> Naive Bayes </Link>
                         </div>
                     @endforeach
                 </div>
