@@ -45,6 +45,11 @@
                         </div>
                     @else
                         <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+                            <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                                {{ __('Dashboard') }}
+                            </x-nav-link>
+                        </div>
+                        <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
                             <x-nav-link :href="route('hasil.index')" :active="request()->routeIs('hasil.index')">
                                 {{ __('Hasil Klasifikasi') }}
                             </x-nav-link>
@@ -124,6 +129,9 @@
                         {{ __('Rekomendasi Restoran') }}
                     </x-responsive-nav-link>
                 @else
+                    <x-responsive-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
+                        {{ __('Dashboard') }}
+                    </x-responsive-nav-link>
                     <x-responsive-nav-link :href="route('hasil.index')" :active="request()->routeIs('hasil.index')">
                         {{ __('Hasil Klasifikasi') }}
                     </x-responsive-nav-link>
